@@ -78,7 +78,7 @@ create_channel_message(ChannelId, Content, Embed) ->
             #{<<"content">> => unicode:characters_to_binary(Content),
                 <<"embed">> => Embed}
     end,
-    {post, Path, jiffy:encode(Body, [force_utf8])}.
+    {post, Path, jsx:encode(Body)}.
 
 %%--------------------------------------------------------------------
 %% @doc
